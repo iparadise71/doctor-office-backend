@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'samuel.choque'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile("tk.mybatis:mapper-spring-boot-starter:2.0.3")
+	compile "org.springframework.boot:spring-boot-starter-jersey"
+	compile("mysql:mysql-connector-java:8.0.24")
+	compile("org.projectlombok:lombok:1.18.0")
+	compile("javax.persistence:persistence-api:1.0")
+	compile("org.apache.commons:commons-lang3:3.3")
+	compile("org.apache.commons:commons-collections4:4.1")
+	compile ("commons-beanutils:commons-beanutils:1.9.1")
+	compile ("org.springframework.boot:spring-boot-devtools")
+	compile group: 'org.apache.poi', name: 'poi', version: '3.12'
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.12'
+	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
+
+	compile group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '3.9.1'
+    compile files('lib/stanford-corenlp-3.9.1-javadoc.jar')
+	compile files('lib/stanford-corenlp-3.9.1-models.jar')
+	compile files('lib/stanford-corenlp-3.9.1-sources.jar')
+	compile files('lib/xom.jar')
+}
+
+test {
+	useJUnitPlatform()
+}
