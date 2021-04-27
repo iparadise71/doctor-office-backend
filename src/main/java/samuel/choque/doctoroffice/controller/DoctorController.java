@@ -33,10 +33,8 @@ public class DoctorController {
         try {
             List<Doctor> listDoctors = doctorDao.getDoctors();
             if (listDoctors == null) {
-                System.out.println("NULL DOCTORS");
                 response.put("doctors", Collections.emptyMap());
             } else {
-                System.out.println("ALL DOCTORS");
                 response.put("total", listDoctors.size());
                 response.put("doctors", listDoctors);
             }

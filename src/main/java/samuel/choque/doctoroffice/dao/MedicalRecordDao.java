@@ -33,13 +33,9 @@ public class MedicalRecordDao {
     }
 
     public MedicalRecord setMedicalRecord(MedicalRecord medicalRecord) {
-        System.out.println(medicalRecord);
-//        prescriptionMapper.insert()
         medicalRecordMapper.insertMedicalRecord(medicalRecord);
-//        prescriptionMapper.
         List<Prescription> prescriptionList = medicalRecord.getPrescriptionList();
         prescriptionMapper.insertPrescriptionList(prescriptionList, medicalRecord.getIdMedicalRecord());
-        System.out.println(medicalRecord);
         return medicalRecord;
     }
 }
